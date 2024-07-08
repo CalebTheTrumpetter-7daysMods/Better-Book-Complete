@@ -1,0 +1,18 @@
+<caleb>
+    <!--Remove Copletion perk-->
+    <remove xpath="//perks/book[@name='perkShotgunMessiahComplete']"/>
+    <!--Add new one-->
+    <insertAfter xpath="//perks/book[@name='perkShotgunMessiahPartyStarter']">
+        <book name="perkShotgunMessiahComplete" parent="skillShotguns" max_level="1" base_skill_point_cost="0" name_key="perkShotgunMessiahCompleteName" desc_key="perkShotgunMessiahCompleteDesc" long_desc_key="perkShotgunMessiahCompleteLongDesc">
+            <effect_group>
+                <passive_effect name="RecipeTagUnlocked" operation="base_set" level="1" value="1" tags="ammoBundleShotgunShell,ammoBundleShotgunSlug,ammoBundleShotgunBreachingSlug"/>
+                <passive_effect name="BlockDamage" operation="perc_add" level="1" value="3" tags="wood">
+                    <requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+                </passive_effect>
+                <passive_effect name="ReloadSpeedMultiplier" opperation="perc_add" level="1" value="1.2">
+                    <requirement name="HoldingItemHasTags" tags="perkBoomstick"/>
+                </passive_effect>
+            </effect_group>
+        </book>
+    </insertAfter>
+</caleb>
